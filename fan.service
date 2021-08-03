@@ -1,0 +1,14 @@
+[Unit]
+Description=Fan control
+After=multi-user.target
+
+[Service]
+RestartSec=2s
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStart=/usr/bin/python /home/pi/fanctrl.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
